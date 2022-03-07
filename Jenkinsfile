@@ -11,4 +11,8 @@ node {
    app.push("latest")
   }
  }
+ stage('Initialize'){
+        def dockerHome = tool 'dockertest'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+ }
 }
