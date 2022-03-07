@@ -1,23 +1,4 @@
-podTemplate(label: 'docker-build', 
-  containers: [
-    containerTemplate(
-      name: 'git',
-      image: 'alpine/git',
-      command: 'cat',
-      ttyEnabled: true
-    ),
-    containerTemplate(
-      name: 'docker',
-      image: 'docker',
-      command: 'cat',
-      ttyEnabled: true
-    ),
-  ],
-  volumes: [ 
-    hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'), 
-  ]
-) {
-    node('docker-build') {
+node('docker-build') {
         def dockerHubCred = asdlkjfhg
         def appImage
         
@@ -57,5 +38,3 @@ podTemplate(label: 'docker-build',
             }
         }
     }
-    
-}
