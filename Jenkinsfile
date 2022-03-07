@@ -1,4 +1,8 @@
 node {
+ stage('Initialize'){
+        def dockerHome = tool 'dockertest'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+ }
  stage('========== Clone repository ==========') {
   checkout scm
  }
@@ -10,9 +14,5 @@ node {
    app.push("${env.BUILD_NUMBER}")
    app.push("latest")
   }
- }
- stage('Initialize'){
-        def dockerHome = tool 'dockertest'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
  }
 }
