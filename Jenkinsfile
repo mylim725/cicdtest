@@ -1,4 +1,4 @@
-node('docker-build') {
+node {
         def dockerHubCred = asdlkjfhg
         def appImage
         
