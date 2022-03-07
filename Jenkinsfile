@@ -7,7 +7,7 @@ node {
 	
 	//GitLab
 	GIT_URL='http://34.64.83.102:8086/root/shopping_project.git'
-	GIT_BRANCH=params.branchName
+	GIT_BRANCH=master
 	GIT_CREDENTIALS_ID='root'
 	
 	//Build 관련 설정
