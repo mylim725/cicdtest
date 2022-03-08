@@ -1,6 +1,6 @@
 node {
  stage('Initialize'){
-        def dockerHome = tool 'dockertest'
+        def dockerHome = tool 'docker-test'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
  }
  stage('========== Clone repository ==========') {
