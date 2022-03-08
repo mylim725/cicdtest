@@ -6,7 +6,7 @@ node {
  stage('========== Clone repository ==========') {
   checkout scm
  }
- stage('npm build') {
+ stage('test') {
 	steps {
 		sh 'service docker start'
 		sh 'systemctl start docker'
