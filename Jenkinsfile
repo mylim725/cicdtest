@@ -6,6 +6,12 @@ node {
  stage('========== Clone repository ==========') {
   checkout scm
  }
+ stage('npm build') {
+	steps {
+		sh 'service docker start'
+		sh 'systemctl start docker'
+	}
+ }
  stage('========== Build image ==========') {
   app = docker.build("asdlkjfhg/testbuild")
  }
