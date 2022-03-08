@@ -1,8 +1,4 @@
 node {
- stage('Initialize'){
-        def dockerHome = tool 'docker-test'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
- }
  stage('========== Clone repository ==========') {
   checkout scm
  }
