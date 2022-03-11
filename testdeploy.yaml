@@ -2,15 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shopping
+  labels:
+    app: shopping
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: shopping
-  containers:
-  - name: shopping
-    image: asdlkjfhg/testbuild:latest
-    ports:
-    - containerPort: 8080
+  template:
+    metadata:
+      labels:
+        app: shopping
+    spec:
+      containers:
+      - name: shopping
+        image: asdlkjfhg/testbuild:latest
+        ports:
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
