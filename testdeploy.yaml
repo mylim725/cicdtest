@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopping
+spec:
+  selector:
+    matchLabels:
+      app: shopping
+  containers:
+  - name: shopping
+    image: asdlkjfhg/testbuild:latest
+    ports:
+    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopping
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8085
+    targetPort: 8080
+  selector:
+    app: shopping
