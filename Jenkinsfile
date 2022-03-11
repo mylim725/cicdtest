@@ -6,7 +6,7 @@ node {
   app = docker.build("asdlkjfhg/testbuild")
  }
  stage('========== Push image ==========') {
-  docker.withRegistry('https://hub.docker.com/repositories', 'docker-hub') {
+  docker.withRegistry('https://hub.docker.com', 'docker-hub') {
    app.push("${env.BUILD_NUMBER}")
    app.push("latest")
   }
